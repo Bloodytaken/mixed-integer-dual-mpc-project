@@ -46,6 +46,32 @@
       color: #777;
       margin: 20px 0;
     }
+
+    .video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.video-item video {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  background: #000;
+}
+
+.video-caption {
+  text-align: center;
+  margin-top: 8px;
+  color: #444;
+}
+
+@media (max-width: 700px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 
@@ -92,11 +118,37 @@
     Highway experiment video / figures will be added here.
   </div>
 
-  <h2>Roundabout Scenario</h2>
+<h2>CARLA Roundabout Scenario</h2>
 
-  <div class="placeholder">
-    CARLA roundabout video will be added here.
+<p>
+  Closed-loop evaluation in a double-lane roundabout environment.
+  The two cases illustrate the ego vehicle's interaction with opponents
+  exhibiting different latent behaviors.
+</p>
+
+<div class="video-grid">
+
+  <div class="video-item">
+    <video controls playsinline preload="metadata">
+      <source src="assets/Carla_cau.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p class="video-caption">
+      <strong>Cautious opponent</strong>
+    </p>
   </div>
+
+  <div class="video-item">
+    <video controls playsinline preload="metadata">
+      <source src="assets/Carla_agg.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p class="video-caption">
+      <strong>Aggressive opponent</strong>
+    </p>
+  </div>
+
+</div>
 
   <h2>Solver Acceleration</h2>
 
