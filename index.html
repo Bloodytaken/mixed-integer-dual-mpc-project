@@ -115,39 +115,52 @@
 <h2>Highway Scenario</h2>
 
 <p>
-  Closed-loop interaction in a multi-lane highway scenario with multiple
-  surrounding vehicles. The sequence illustrates the discrete interaction
-  decisions and the resulting ego trajectory during online planning.
+  The ego vehicle aims to maintain a reference speed while interacting
+  with surrounding vehicles whose responses are initially uncertain.
+  The dual-control formulation enables the ego to actively probe these
+  responses through its motion, accelerating belief convergence and
+  reducing behavioral uncertainty. Meanwhile, the mixed-integer
+  formulation provides explicit interaction decisions, making the
+  resulting planning behavior directly interpretable.
 </p>
 
-<div style="text-align: center; margin: 24px 0;">
+<!-- Main result -->
+<div class="highway-main">
   <img
     src="assets/highway_1.gif"
-    alt="Closed-loop highway interaction scenario"
-    style="width: 100%; max-width: 900px; height: auto;"
+    alt="Main closed-loop highway interaction"
   >
-  <p class="video-caption">
-    <strong>Representative closed-loop interaction</strong>
-  </p>
+
+  <div class="result-description">
+    <strong>Representative interaction.</strong>
+    The ego actively accelerates while pursuing the reference speed,
+    eliciting responses from the surrounding vehicles and accelerating
+    belief convergence. As uncertainty decreases, the planner adapts
+    its discrete interaction decisions and continuous motion accordingly.
+  </div>
 </div>
+
+<h3 class="supporting-title">Additional cases</h3>
 
 <div class="video-grid">
 
   <div class="video-item">
-    <div class="placeholder highway-placeholder">
-      Highway example 2 will be added here.
-    </div>
+    <img
+      src="assets/highway_2.gif"
+      alt="Additional highway interaction case"
+    >
     <p class="video-caption">
-      <strong>Additional highway interaction</strong>
+      <strong>Highway interaction II</strong>
     </p>
   </div>
 
   <div class="video-item">
-    <div class="placeholder highway-placeholder">
-      Highway example 3 will be added here.
-    </div>
+    <img
+      src="assets/highway_3.gif"
+      alt="Additional highway interaction case"
+    >
     <p class="video-caption">
-      <strong>Additional highway interaction</strong>
+      <strong>Highway interaction III</strong>
     </p>
   </div>
 
