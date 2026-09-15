@@ -112,6 +112,50 @@
       max-width: 100%;
     }
   }
+
+  /* Solver performance */
+.performance-figure {
+  margin: 28px auto 22px auto;
+  text-align: center;
+}
+
+.performance-figure img {
+  width: 100%;
+  max-width: 780px;
+  height: auto;
+}
+
+.performance-highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 28px auto;
+  max-width: 900px;
+}
+
+.performance-card {
+  background: #f6f6f6;
+  border-radius: 8px;
+  padding: 20px 12px;
+  text-align: center;
+}
+
+.performance-number {
+  font-size: 1.65em;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.performance-label {
+  font-size: 0.9em;
+  color: #555;
+}
+
+@media (max-width: 700px) {
+  .performance-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 </style>
 </head>
 
@@ -245,9 +289,59 @@
 
   <h2>Solver Acceleration</h2>
 
-  <div class="placeholder">
-    Solver acceleration results will be added here.
+<p>
+  GNN-guided variable fixing substantially reduces the computational
+  cost of the mixed-integer optimization while preserving solution quality.
+  The results below summarize 411 test instances collected from 13
+  highway trials.
+</p>
+
+<div class="performance-figure">
+  <img
+    src="assets/speedup.png"
+    alt="Solve-time reduction and speedup achieved by GNN-guided variable fixing"
+  >
+</div>
+
+<div class="performance-highlights">
+
+  <div class="performance-card">
+    <div class="performance-number">2.5&times;</div>
+    <div class="performance-label">
+      Average speedup
+    </div>
   </div>
+
+  <div class="performance-card">
+    <div class="performance-number">10&times;</div>
+    <div class="performance-label">
+      Maximum speedup
+    </div>
+  </div>
+
+  <div class="performance-card">
+    <div class="performance-number">94.4%</div>
+    <div class="performance-label">
+      Instances accelerated
+    </div>
+  </div>
+
+  <div class="performance-card">
+    <div class="performance-number">99.95%</div>
+    <div class="performance-label">
+      Fixing accuracy
+    </div>
+  </div>
+
+</div>
+
+<p class="result-description">
+  As the full MINLP becomes harder to solve, the reduced solve time remains
+  concentrated around 0.3&ndash;0.65 s, resulting in larger speedups on
+  computationally demanding instances. Across the test set, the maximum
+  objective degradation is only 0.0080%, indicating that the acceleration
+  is achieved with negligible loss in solution quality.
+</p>
 
 </body>
 
